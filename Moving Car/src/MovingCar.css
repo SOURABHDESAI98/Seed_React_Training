@@ -1,0 +1,175 @@
+.movingcar-container {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f8fafc 0%, #ffe0b2 40%, #c8e6c9 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.movingcar-title {
+  color: black;
+  font-weight: 700;
+  font-size: 2.3rem;
+  letter-spacing: 2px;
+  margin-bottom: 2.2rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  text-shadow: 0 2px 8px #90caf9;
+}
+
+.movingcar-track {
+  height: 180px;
+  background: linear-gradient(90deg, white 0%, #c8e6c9 100%);
+  border-radius: 32px;
+  box-shadow: 0 12px 36px #1976d240;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 4px solid black;
+}
+
+.movingcar-car {
+  position: absolute;
+  top: 40px;
+  user-select: none;
+  font-size: 100px;
+  color: black;
+  filter: drop-shadow(0 6px 24px #ffb30080);
+  z-index: 2;
+  transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: car-bounce 1.2s infinite alternate cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.movingcar-controls {
+  margin-top: 48px;
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+}
+
+.car {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 140px;
+  height: 70px;
+  background: linear-gradient(90deg, #ffb300 40%, #FFFFE0 80%, #FAF0E6 100%);
+  border-radius: 35px 35px 25px 25px;
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.25),
+    0 0 0 8px #fffbe0 inset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #6d4c41;
+  transition: left 0.7s cubic-bezier(0.77, 0, 0.175, 1);
+  animation: car-move 2.5s infinite alternate cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.wheel {
+  position: absolute;
+  bottom: -20px;
+  width: 36px;
+  height: 36px;
+  background: radial-gradient(circle at 12px 12px, #8bc34a 60%, #6d4c41 100%);
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  border: 4px solid #ffb300;
+  animation: wheel-spin 0.5s linear infinite;
+}
+
+.wheel.left {
+  left: 24px;
+}
+.wheel.right {
+  right: 24px;
+}
+
+.window {
+  position: absolute;
+  top: 14px;
+  left: 48px;
+  width: 44px;
+  height: 28px;
+  background: linear-gradient(135deg, #fffde7 60%, #ffe0b2 100%);
+  border-radius: 12px 12px 10px 10px;
+  opacity: 0.92;
+  border: 2px solid #29b6f6;
+  box-shadow: 0 2px 8px rgba(0, 188, 212, 0.15);
+}
+
+@keyframes wheel-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes car-move {
+  0% {
+    filter: drop-shadow(0 0 0 #ffb300);
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.18),
+      0 0 0 8px #fffde7 inset;
+    left: 0;
+  }
+  50% {
+    filter: drop-shadow(0 12px 24px #8bc34a);
+    box-shadow:
+      0 24px 64px rgba(41, 182, 246, 0.18),
+      0 0 0 8px #fffde7 inset;
+    left: 40vw;
+  }
+  100% {
+    filter: drop-shadow(0 0 0 #29b6f6);
+    box-shadow:
+      0 8px 32px rgba(0, 0, 0, 0.18),
+      0 0 0 8px #fffde7 inset;
+    left: 80vw;
+  }
+}
+
+@keyframes car-bounce {
+  0% {
+    transform: translateY(-2px);
+  }
+  100% {
+    transform: translateY(8px);
+  }
+}
+
+.road {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 36px;
+  background: repeating-linear-gradient(
+    90deg,
+    #8bc34a 0 40px,
+    #ffe0b2 40px 60px
+  );
+  box-shadow: 0 6px 24px rgba(0, 188, 212, 0.25);
+  z-index: -1;
+  border-top: 4px solid #ffb300;
+}
+
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(180deg, #f8fafc 0%, #ffe0b2 40%, #c8e6c9 100%);
+  z-index: -2;
+}
