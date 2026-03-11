@@ -1,0 +1,27 @@
+.yellow,
+.pink,
+.black,
+.red,
+.purple {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: inline-block;
+  margin: 10px;
+}
+
+.yellow {
+  background: #ffe066;
+}
+.pink {
+  background: #ff6f91;
+}
+.black {
+  background: #222;
+}
+.purple {
+  background: #a259ff;
+}
+.red {
+  background: red;
+}

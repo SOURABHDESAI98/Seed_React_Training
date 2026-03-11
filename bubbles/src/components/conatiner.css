@@ -1,0 +1,10 @@
+.container {
+  position: relative;
+  width: 800px;
+  height: 400px;
+  margin: auto;
+  background: #f5f5f5;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}

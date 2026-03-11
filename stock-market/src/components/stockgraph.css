@@ -1,0 +1,46 @@
+
+.control-pane {
+	margin: 32px auto;
+	max-width: 950px;
+	background: #f9fafb;
+	border-radius: 12px;
+	box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+	padding: 32px 24px;
+	transition: box-shadow 0.2s;
+}
+
+.control-pane:hover {
+	box-shadow: 0 8px 24px rgba(0,0,0,0.13);
+}
+
+.control-section {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 420px;
+}
+
+.charts {
+	text-align: center;
+}
+
+.e-stockchart {
+	width: 100%;
+	min-height: 420px;
+	background: #fff;
+	border-radius: 8px;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+	padding: 16px;
+}
+
+/* Responsive styles */
+@media (max-width: 700px) {
+	.control-pane {
+		padding: 12px;
+		max-width: 100%;
+	}
+	.e-stockchart {
+		min-height: 260px;
+		padding: 8px;
+	}
+}

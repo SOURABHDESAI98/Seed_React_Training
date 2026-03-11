@@ -1,0 +1,178 @@
+/* Stock card styling */
+.stock-card {
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  color: #222;
+  border-radius: 32px;
+  box-shadow: 0 4px 24px rgba(168, 237, 234, 0.18);
+  padding: 36px 44px;
+  min-width: 350px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Segoe UI", "Roboto", Arial, sans-serif;
+
+  animation: pop-in 0.7s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+  position: relative;
+  overflow: hidden;
+}
+
+.stock-card:hover {
+
+  box-shadow:
+    0 12px 32px rgba(168, 237, 234, 0.28),
+    0 0 24px #fed6e344;
+  background: linear-gradient(135deg, #fed6e3 0%, #a8edea 100%);
+}
+
+.stock-name {
+  font-size: 1.5rem;
+  color: #2c5364;
+  font-weight: 700;
+  margin-bottom: 16px;
+  letter-spacing: 1.5px;
+  text-shadow:
+    0 2px 8px #fff6,
+    0 0 2px #a8edea;
+}
+
+.stock-value {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #27ae60;
+  text-shadow: 0 1px 4px #fff6;
+}
+
+.stock-change {
+  font-size: 1.15rem;
+  font-weight: 500;
+  margin-top: 12px;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.change-amount {
+  margin-right: 8px;
+  color: #222;
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+/* Glowing animation for growth/decline */
+@keyframes glow-green {
+  0% {
+    text-shadow:
+      0 0 8px #27ae6044,
+      0 0 2px #fff;
+  }
+  100% {
+    text-shadow:
+      0 0 16px #27ae6088,
+      0 0 4px #fff;
+  }
+}
+@keyframes glow-red {
+  0% {
+    text-shadow:
+      0 0 8px #e74c3c44,
+      0 0 2px #fff;
+  }
+  100% {
+    text-shadow:
+      0 0 16px #e74c3c88,
+      0 0 4px #fff;
+  }
+}
+
+.stock-card.up .change-percent {
+  color: #27ae60;
+  font-weight: 700;
+  text-shadow:
+    0 0 8px #27ae6044,
+    0 0 2px #fff;
+  animation: glow-green 1.2s infinite alternate;
+}
+.stock-card.down .change-percent {
+  color: #e74c3c;
+  font-weight: 700;
+  text-shadow:
+    0 0 8px #e74c3c44,
+    0 0 2px #fff;
+  animation: glow-red 1.2s infinite alternate;
+}
+
+/* Stock Overview Container - Extended dimensions */
+.stock-card .stock-overview-container {
+  width: 100%;
+  margin-top: 24px;
+  padding: 16px;
+}
+
+.stock-card .stock-overview-container .card {
+  min-height: auto;
+  border-radius: 12px;
+}
+
+.stock-card .stock-overview-container .card-header {
+  padding: 20px !important;
+  border-radius: 12px 12px 0 0 !important;
+}
+
+.stock-card .stock-overview-container .card-body {
+  padding: 24px !important;
+}
+
+/* Stock items row - better spacing */
+.stock-card .stock-items-row {
+  gap: 16px !important;
+}
+
+/* Individual stock card in overview */
+.stock-card .stock-overview-card {
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  min-height: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.stock-card .stock-overview-card:hover {
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15) !important;
+}
+
+.stock-card .stock-overview-card .card-body {
+  padding: 20px !important;
+  flex-shrink: 0;
+}
+
+.stock-card .stock-overview-card .card-title {
+  font-size: 1.2rem !important;
+  font-weight: 600 !important;
+  color: #2c5364;
+  margin-bottom: 16px !important;
+}
+
+.stock-card .stock-overview-card .card-text {
+  padding: 16px 12px !important;
+  border-radius: 8px !important;
+  margin-bottom: 16px !important;
+}
+
+/* Animation for pop-in effect */
+@keyframes pop-in {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.05);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
